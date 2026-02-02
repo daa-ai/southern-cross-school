@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <div id="login-screen" class="screen active">
+            <div class="login-container">
+                <div class="login-header">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>School Hub</h1>
+                </div>
+                <form id="login-form">
+                    <div class="input-group">
+                        <i class="fas fa-user-tag"></i>
+                        <select id="user-role" required>
+                            <option value="">Select Role</option>
+                            <option value="admin">Admin</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="parent">Parent</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit"><i class="fas fa-sign-in-alt"></i> Login</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="admin-dashboard" class="screen dashboard">
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>School Hub</h3>
+                </div>
+                <nav class="sidebar-nav">
+                    <button class="nav-btn active" data-section="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</button>
+                    <button class="nav-btn" data-section="students"><i class="fas fa-user-graduate"></i> Students</button>
+                    <button class="nav-btn" data-section="teachers"><i class="fas fa-chalkboard-teacher"></i> Teachers</button>
+                    <button class="nav-btn" data-section="classes"><i class="fas fa-door-open"></i> Classes</button>
+                    <button class="nav-btn" data-section="fees"><i class="fas fa-dollar-sign"></i> Fees</button>
+                    <button class="nav-btn" data-section="announcements"><i class="fas fa-bullhorn"></i> Announcements</button>
+                    <button class="nav-btn" data-section="reports"><i class="fas fa-chart-bar"></i> Reports</button>
+                    <button class="nav-btn" data-section="messages"><i class="fas fa-envelope"></i> Messages</button>
+                    <button class="nav-btn" data-section="calendar"><i class="fas fa-calendar"></i> Calendar</button>
+                </nav>
+                <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+            <div class="main-content">
+                <header class="top-header">
+                    <h2 id="page-title">Admin Dashboard</h2>
+                    <div class="user-info">
+                        <i class="fas fa-user-shield"></i>
+                        <span id="user-name">Administrator</span>
+                    </div>
+                </header>
+                <div id="admin-content" class="content"></div>
+            </div>
+        </div>
+
+        <div id="teacher-dashboard" class="screen dashboard">
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>School Hub</h3>
+                </div>
+                <nav class="sidebar-nav">
+                    <button class="nav-btn active" data-section="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</button>
+                    <button class="nav-btn" data-section="my-classes"><i class="fas fa-door-open"></i> My Classes</button>
+                    <button class="nav-btn" data-section="attendance"><i class="fas fa-clipboard-check"></i> Attendance</button>
+                    <button class="nav-btn" data-section="marks"><i class="fas fa-star"></i> Marks</button>
+                    <button class="nav-btn" data-section="homework"><i class="fas fa-book"></i> Homework</button>
+                    <button class="nav-btn" data-section="timetable"><i class="fas fa-clock"></i> Timetable</button>
+                    <button class="nav-btn" data-section="messages"><i class="fas fa-envelope"></i> Messages</button>
+                    <button class="nav-btn" data-section="calendar"><i class="fas fa-calendar"></i> Calendar</button>
+                </nav>
+                <button id="teacher-logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+            <div class="main-content">
+                <header class="top-header">
+                    <h2 id="teacher-page-title">Teacher Dashboard</h2>
+                    <div class="user-info">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span id="teacher-name">Teacher</span>
+                    </div>
+                </header>
+                <div id="teacher-content" class="content"></div>
+            </div>
+        </div>
+
+        <div id="parent-dashboard" class="screen dashboard">
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>School Hub</h3>
+                </div>
+                <nav class="sidebar-nav">
+                    <button class="nav-btn active" data-section="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</button>
+                    <button class="nav-btn" data-section="child-profile"><i class="fas fa-child"></i> Child Profile</button>
+                    <button class="nav-btn" data-section="attendance-view"><i class="fas fa-clipboard-check"></i> Attendance</button>
+                    <button class="nav-btn" data-section="progress"><i class="fas fa-chart-line"></i> Progress</button>
+                    <button class="nav-btn" data-section="homework-view"><i class="fas fa-book"></i> Homework</button>
+                    <button class="nav-btn" data-section="fees-view"><i class="fas fa-dollar-sign"></i> Fees</button>
+                    <button class="nav-btn" data-section="messages"><i class="fas fa-envelope"></i> Messages</button>
+                    <button class="nav-btn" data-section="calendar"><i class="fas fa-calendar"></i> Calendar</button>
+                </nav>
+                <button id="parent-logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+            <div class="main-content">
+                <header class="top-header">
+                    <h2 id="parent-page-title">Parent Dashboard</h2>
+                    <div class="user-info">
+                        <i class="fas fa-users"></i>
+                        <span id="parent-name">Parent</span>
+                    </div>
+                </header>
+                <div id="parent-content" class="content"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
